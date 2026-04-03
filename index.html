@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kuaför Hasan Duman | Premium Saç Tasarım Salonu - Gebze</title>
+    <meta name="description" content="Gebze'nin en premium kadın kuaförü. Modern saç tasarımları, doğal keratin bakımı, profesyonel ekip. Randevu: 0536 236 24 27">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-gold: #D4AF37;
+            --primary-dark: #1a1a1a;
+            --secondary-gold: #F2D492;
+            --accent-blue: #2c5282;
+            --bg-light: #f8fafc;
+            --white: #ffffff;
+            --shadow-light: 0 10px 40px rgba(0,0,0,0.1);
+            --shadow-heavy: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            color: var(--primary-dark);
+            overflow-x: hidden;
+            background: var(--bg-light);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header-hero {
+            position: relative;
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800"><rect fill="%23f8fafc" width="1200" height="800"/><path fill="%23D4AF37" opacity="0.1" d="M0 400Q300 200 600 400T1200 400V800H0z"/><path fill="%232c5282" opacity="0.05" d="M0 0Q400 200 800 0T1200 200V0z"/></svg>');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: 0.05em;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+        }
+
+        .hero-subtitle {
+            font-size: 1.4rem;
+            font-weight: 300;
+            max-width: 600px;
+            margin: 0 auto 40px;
+            opacity: 0.95;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary, .btn-secondary {
+            padding: 18px 40px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
+            color: var(--primary-dark);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 50px rgba(212, 175, 55, 0.4);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+        }
+
+        .btn-secondary:hover {
+            background: var(--white);
+            color: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 120px 0;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            text-align: center;
+            margin-bottom: 80px;
+            background: linear-gradient(135deg, var(--primary-gold), var(--accent-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
+            border-radius: 2px;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .contact-card {
+            background: var(--white);
+            padding: 50px 40px;
+            border-radius: 20px;
+            box-shadow: var(--shadow-light);
+            text-align: center;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .contact-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-heavy);
+            border-color: var(--primary-gold);
+        }
+
+        .contact-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 2rem;
+            color: var(--primary-dark);
+        }
+
+        /* Schedule Table */
+        .schedule-table {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow-light);
+            margin-top: 40px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            background: linear-gradient(135deg, var(--primary-dark), var(--accent-blue));
+            color: var(--white);
+            padding: 25px 30px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.95rem;
+        }
+
+        td {
+            padding: 25px 30px;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+            font-weight: 500;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover td {
+            background: rgba(212, 175, 55, 0.05);
+        }
+
+        .closed {
+            color: #e53e3e;
+            font-weight: 700;
+        }
+
+        /* Services */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 50px 40px;
+            border-radius: 25px;
+            text-align: center;
+            box-shadow: var(--shadow-light);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-gold), var(--accent-blue));
+        }
+
+        .service-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .service-icon {
+            width: 90px;
+            height: 90px;
+            background: linear-gradient(135deg, var(--primary-gold), var(--secondary-gold));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px;
+            font-size: 2.2rem;
+            color: var(--primary-dark);
+        }
+
+        .service-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--primary-dark);
+        }
+
+        /* Rating */
+        .rating-section {
+            text-align: center;
+            padding: 80px 0;
+            background: linear-gradient(135deg, var(--white) 0%, var(--bg-light) 100%);
+        }
+
+        .rating-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #48bb78, #38a169);
+            color: var(--white);
+            padding: 25px 50px;
+            border-radius: 50px;
+            font-size: 2.5rem;
+            font-weight: 700;
+            box-shadow: var(--shadow-heavy);
+            margin-bottom: 30px;
+            letter-spacing: 2px;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary-dark);
+            color: var(--white);
+            text-align: center;
+            padding: 60px 0 40px;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .section {
+                padding: 80px 0;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="header-hero">
+        <div class="hero-content fade-in-up">
+            <h1>Kuaför Hasan Duman</h1>
+            <p class="hero-subtitle">Gebze'nin Premium Saç Tasarım Salonu<br>2013'ten beri modern stil ve doğal bakım</p>
+            <div class="cta-buttons">
+                <a href="tel:05362362427" class="btn-primary">
+                    <i class="fas fa-phone"></i> Hemen Ara
+                </a>
+                <a href="#contact" class="btn-secondary">
+                    <i class="fas fa-map-marker-alt"></i> Konumu Gör
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">İletişim Bilgileri</h2>
+            <div class="contact-grid">
+                <div class="contact-card fade-in-up">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3>Adres</h3>
+                    <p>Hacıhalil Mah.<br>1218. Sk. No:28<br>41400 Gebze/Kocaeli</p>
+                </div>
+                <div class="contact-card fade-in-up">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3>Telefon</h3>
+                    <p><strong>0536 236 24 27</strong><br>(0262) 646 30 69</p>
+                    <a href="tel:05362362427" class="btn-primary" style="margin-top: 20px; width: 100%;">
+                        Ara
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background: var(--white);">
+        <div class="container">
+            <h2 class="section-title">Çalışma Saatleri</h2>
+            <div class="schedule-table fade-in-up">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Gün</th>
+                            <th>Saatler</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>Pazartesi</strong></td><td>09:00 - 19:30</td></tr>
+                        <tr><td><strong>Salı</strong></td><td class="closed">Kapalı</td></tr>
+                        <tr><td><strong>Çarşamba</strong></td><td>08:00 - 19:30</td></tr>
+                        <tr><td><strong>Perşembe</strong></td><td>09:00 - 19:30</td></tr>
+                        <tr><td><strong>Cuma</strong></td><td>07:30 - 19:30</td></tr>
+                        <tr><td><strong>Cumartesi</strong></td><td>09:00 - 19:30</td></tr>
+                        <tr><td><strong>Pazar</strong></td><td>09:00 - 19:30</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Premium Hizmetler</h2>
+            <div class="services-grid">
+                <div class="service-card fade-in-up">
+                    <div class="service-icon">
+                        <i class="fas fa-cut"></i>
+                    </div>
+                    <h3>Saç Kesimi & Tasarım</h3>
+                    <p>Kişiye özel modern kesimler ve profesyonel şekillendirme</p>
+                </div>
+                <div class="service-card fade-in-up">
+                    <div class="service-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3>Boya & Renklendirme</h3>
+                    <p>Ombre, balyaj ve doğal tonlarda uzman boya uygulamaları</p>
+                </div>
+                <div class="service-card fade-in-up">
+                    <div class="service-icon">
+                        <i class="fas fa-spa"></i>
+                    </div>
+                    <h3>Keratin Bakımı</h3>
+                    <p>Doğal içerikli saç yenileme ve onarım tedavileri</p>
+                </div>
+                <div class="service-card fade-in-up">
+                    <div class="service-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>Stil Danışmanlığı</h3>
+                    <p>Kişisel tarza uygun profesyonel bakım önerileri</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="rating-section">
+        <div class="container">
+            <div class="rating-badge fade-in-up">4.2 / 5</div>
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 20px;">
+                Müşteri Memnuniyeti
+            </h2>
+            <p style="font-size: 1.3rem; max-width: 600px; margin: 0 auto; opacity: 0.9;">
+                Profesyonel kesim, sıcak karşılama ve yenilikçi uygulamalarla 
+                Gebze'nin en çok tercih edilen kuaförü
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <h3 style="font-family: 'Playfair Display', serif; margin-bottom: 20px;">
+                Kuaför Hasan Duman
+            </h3>
+            <p style="opacity: 0.8; margin-bottom: 20px;">
+                2013'ten beri Gebze'de premium saç tasarımı<br>
+                Hacıhalil Mah. 1218. Sk. No:28
+            </p>
+            <p style="opacity: 0.6; font-size: 0.9rem;">
+                © 2024 Tüm hakları saklıdır
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
